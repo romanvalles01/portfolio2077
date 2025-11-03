@@ -1,16 +1,190 @@
 ---
+import "../styles/global.css";
 
+const projects = [{
+  title: "Andromeda · Digital Lab",
+  desc: "Independent brand focused on developing custom web solutions, UI design, and automation tools for local businesses.",
+  stack: ["Next.js", "Firebase", "Cloudflare", "Shadcn/UI"],
+  link: "https://www.weareandromeda.dev/",
+},
+  {
+    title: "Sillones Rosario · E-commerce",
+    desc: "Furniture e-commerce platform built with React, Firebase, and Cloudinary. Includes admin dashboard, Mercado Pago integration, and CDN optimization.",
+    stack: ["React", "Firebase", "Cloudinary", "Tailwind"],
+    link: "https://sillonesrosario.com/",
+  },
+  {
+    title: "Trading Platform",
+    desc: "Educational trading dashboard with automation tools, secure auth, and video modules.",
+    stack: ["Vite", "Firebase", "TypeScript", "Tailwind"],
+    link: "https://franco-trading-app.pages.dev/",
+  },
+  {
+    title: "Burger03 · Restaurant Order System",
+    desc: "Real-time order management app for a restaurant, with Firebase Realtime Database and mobile-first UX.",
+    stack: ["Next.js", "Firebase", "Tailwind"],
+    link: "https://burgers03.com/",
+  },
+];
+
+const skills = [
+  "JavaScript / TypeScript",
+  "React / Next.js",
+  "Astro",
+  "Firebase (Auth, Firestore, Storage)",
+  "UI/UX · Figma",
+  "Basic DevSecOps",
+  "GCP",
+  "Deployment, CI/CD & Hosting management"
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Román Valles · Dev</title>
+    <meta name="description" content="Software developer focused on front-end, performance, and clean UX." />
+  </head>
+  <body class="min-h-dvh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-900/60 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a href="#projects" class="hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-400 rounded px-1 py-0.5">Projects</a>
+          <a href="#skills" class="hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-400 rounded px-1 py-0.5">Skills</a>
+          <a href="#experience" class="hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-400 rounded px-1 py-0.5">Experience</a>
+          <a href="#contact" class="hover:opacity-70 focus-visible:ring-2 focus-visible:ring-neutral-400 rounded px-1 py-0.5">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="mx-auto max-w-6xl px-4 pt-16 pb-10">
+        <p class="text-xs uppercase tracking-[0.2em] text-neutral-500">Open to work</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-bold leading-tight">
+          I build clear and fast digital products.
+        </h1>
+        <p class="mt-4 max-w-2xl text-neutral-600 dark:text-neutral-300">
+          Front-end development with focus on speed, usability, and clean design. Experienced with Firebase and secure deployments.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#projects" class="rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 text-sm font-medium hover:opacity-90">View projects</a>
+          <a href="/CV_Roman.pdf" class="rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800">Download CV</a>
+        </div>
+      </section>
+
+      <section id="about" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold">About me</h2>
+        <p class="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
+          I'm a software developer focused on front-end, cloud, and cybersecurity. I build scalable and performant web apps using modern stacks like Next.js, Vite, and Firebase. I combine UX/UI design skills with solid DevSecOps practices to create reliable and maintainable digital products.
+        </p>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 pb-12 grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          {k:"5+",v:"Years of experience"},
+          {k:"10+",v:"Projects"},
+          {k:"<200ms",v:"Typical TTFB"},
+          {k:"99.9%",v:"Static uptime"}
+        ].map((m) => (
+          <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-4" aria-label={m.v}>
+            <div class="text-2xl font-semibold">{m.k}</div>
+            <div class="text-sm text-neutral-500 mt-1">{m.v}</div>
+          </div>
+        ))}
+      </section>
+
+      <section id="experience" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
+        <div class="mt-6 space-y-4">
+          <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5">
+            <header class="flex items-center justify-between">
+              <h3 class="font-medium">COSMIND IT · Software Engineer</h3>
+              <span class="text-xs text-neutral-500">Jun 2024 — Present</span>
+            </header>
+            <ul class="mt-2 list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>Development of high-performance applications with Next.js and Vite.</li>
+              <li>Responsive UI creation with React and TypeScript.</li>
+              <li>Integration with REST/GraphQL APIs and UX/UI optimization.</li>
+              <li>Agile methodologies and Git workflow for project management.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5">
+            <header class="flex items-center justify-between">
+              <h3 class="font-medium">Axelia Cybersecurity · Full Stack Developer & Cybersecurity Intern</h3>
+              <span class="text-xs text-neutral-500">Jun 2025 — Aug 2025</span>
+            </header>
+            <ul class="mt-2 list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>Web vulnerability analysis and configuration assessments.</li>
+              <li>Implementation of API security and CI/CD automation.</li>
+              <li>Security dashboards and technical reporting.</li>
+              <li>Applied DevSecOps practices and containerized testing with Docker.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5">
+            <header class="flex items-center justify-between">
+              <h3 class="font-medium">A3 Sports · Full Stack Developer (Freelance)</h3>
+              <span class="text-xs text-neutral-500">Aug 2023 — Mar 2024</span>
+            </header>
+            <ul class="mt-2 list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>Developed interactive sports analysis dashboards.</li>
+              <li>Integrated YouTube API and dynamic playlist system.</li>
+              <li>Optimized performance and user experience.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
+        <ul class="mt-6 grid gap-4 md:grid-cols-2">
+          {projects.map((p) => (
+            <li class="group rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:bg-neutral-50 dark:hover:bg-neutral-900">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-lg font-medium leading-tight">{p.title}</h3>
+                <span aria-hidden class="transition-transform group-hover:translate-x-0.5">→</span>
+              </div>
+              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{p.desc}</p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
+                {p.stack.map((s) => (
+                  <span class="rounded-full border border-neutral-300 dark:border-neutral-700 px-2 py-1">{s}</span>
+                ))}
+              </div>
+              <a target="_blank" href={p.link} class="mt-4 inline-block text-sm font-medium underline underline-offset-4">Details</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="skills" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold">Skills</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {skills.map((s) => (
+            <li class="rounded-full border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-sm">{s}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-6xl px-4 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold">Contact</h2>
+        <p class="mt-3 text-neutral-600 dark:text-neutral-300 max-w-2xl">
+          Have a project focused on UX or performance? Let's discuss scope and timeline.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a target="_blank" href="mailto:romanvalles01@gmail.com" class="rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-2 text-sm font-medium hover:opacity-90">Email</a>
+          <a target="_blank" href="https://github.com/romanvalles01" class="rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800">GitHub</a>
+          <a target="_blank" href="https://www.linkedin.com/in/romanvalles" class="rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mx-auto max-w-6xl px-4 pb-16 pt-6 text-sm text-neutral-500">
+      <div class="flex items-center justify-between">
+        <p>© {new Date().getFullYear()} Román</p>
+        <a href="#home" class="underline underline-offset-4">Back to top</a>
+      </div>
+    </footer>
+  </body>
 </html>
