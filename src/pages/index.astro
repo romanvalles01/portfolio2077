@@ -1,6 +1,6 @@
 ---
 import PixelBlast from "../components/PixelBlast.jsx";
-import LightPilar from "../components/LightPillar.jsx";
+import FbxViewer from "../components/FbxViewer.jsx";
 import "../styles/global.css";
 
 const projects = [
@@ -38,14 +38,64 @@ const projects = [
 ];
 
 const skills = [
-  "JavaScript / TypeScript",
-  "React / Next.js",
+  // Frontend
+  "JavaScript",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "React.js",
+  "Next.js",
+  "React Router",
+  "Redux",
+  "Redux Toolkit",
+  "RTK Query",
+  "Recharts",
+  "React Native",
+  "Tiptap",
+  "Hooks",
+  "i18next",
   "Astro",
-  "Firebase (Auth, Firestore, Storage)",
-  "UI/UX · Figma",
-  "Basic DevSecOps",
-  "GCP",
-  "Deployment, CI/CD & Hosting management",
+  "Vue.js",
+
+  // Backend & APIs
+  "Node.js",
+  "Express",
+  "REST APIs",
+  "GraphQL",
+  "NestJS",
+
+  // Databases
+  "SQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase (Firestore & Realtime DB)",
+  "Firebase Authentication",
+  "Firebase Cloud Functions",
+  "Firebase Hosting",
+  // Testing & Methodologies
+  "Jest",
+  "TDD",
+  "Scrum / Agile",
+
+  // DevOps / Infra
+  "Docker",
+  "AWS",
+  "Google Cloud (GCP)",
+  "Netlify",
+  "Vercel",
+
+  // Tools
+  "Git",
+  "GitHub",
+  "Postman",
+  "Auth0",
+  "Twilio",
+  "Axios",
+
+  // UX / Design
+  "Figma",
+  "UX/UI Design",
 ];
 ---
 
@@ -91,8 +141,34 @@ const skills = [
   <body
     class="min-h-dvh bg-white text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100"
   >
+    <!-- HEADER MOBILE (solo en < md) -->
+    <header
+      class="flex items-center justify-between border-b border-neutral-900/70 bg-neutral-950/90 px-4 py-3 text-xs text-neutral-100 backdrop-blur md:hidden"
+    >
+      <div class="flex items-center gap-2">
+        <div
+          class="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-400/40 bg-emerald-500/10 text-[10px] font-semibold tracking-[0.22em] text-emerald-300"
+        >
+          RV
+        </div>
+        <div class="leading-tight">
+          <p class="text-[10px] tracking-[0.22em] text-neutral-500 uppercase">Portfolio</p>
+          <p class="text-xs font-medium">Román Valles</p>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-3 text-[11px]">
+        <a href="#home" class="hover:text-white">Overview</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#experience" class="xs:inline hidden hover:text-white">Experience</a>
+        <a href="#contact" class="hidden hover:text-white sm:inline">Contact</a>
+      </nav>
+    </header>
+
+    <!-- SIDEBAR DESKTOP -->
     <aside
-      class="fixed inset-y-0 left-0 z-40 w-60 border-r border-neutral-800/80 bg-neutral-950/80 backdrop-blur-xl"
+      class="hidden md:fixed md:inset-y-0 md:left-0 md:z-40 md:flex md:w-60 md:border-r md:border-neutral-800/80 md:bg-neutral-950/80 md:backdrop-blur-xl"
     >
       <div class="flex h-full flex-col gap-8 px-6 py-8">
         {/* Branding */}
@@ -196,7 +272,8 @@ const skills = [
       </div>
     </aside>
 
-    <main>
+    <!-- MAIN CONTENT -->
+    <main class="md:ml-60">
       <section id="home" class="relative mx-auto max-w-6xl overflow-hidden px-4 pt-16 pb-10">
         <div class="pointer-events-none absolute inset-0 -z-10">
           <PixelBlast
@@ -244,15 +321,41 @@ const skills = [
         </div>
       </section>
 
-      <section id="about" class="mx-auto max-w-6xl px-4 py-12">
-        <h2 class="text-2xl font-semibold md:text-3xl">About me</h2>
-        <p class="mt-4 max-w-3xl text-neutral-600 dark:text-neutral-300">
-          I'm a full-stack developer specializing in modern web technologies. I build scalable,
-          high-performance applications using stacks like Next.js, Vite, and Firebase, with a strong
-          focus on clean architecture and reliable user experiences. I combine solid front-end
-          engineering with backend development skills to create end-to-end solutions that are
-          maintainable, efficient, and ready for production.
-        </p>
+      <section id="about" class="mx-auto max-w-6xl px-4 py-16">
+        <div class="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <!-- Columna texto -->
+          <div>
+            <p class="text-xs tracking-[0.22em] text-neutral-500 uppercase">About me</p>
+
+            <h2 class="font-departure mt-3 text-3xl text-white md:text-4xl">
+              Full-stack developer focused on modern web products.
+            </h2>
+
+            <p class="mt-5 text-base leading-relaxed text-white/80">
+              I design and build digital products that feel fast, intuitive, and reliable. My work
+              goes beyond picking a tech stack — I care about clear architectures, smooth user
+              journeys, and systems that scale without becoming fragile. I approach each project
+              with a mix of design sensitivity, engineering discipline, and a strong focus on
+              performance and clarity.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3 text-xs text-white/80">
+              <span class="rounded-full border border-neutral-800 bg-neutral-900/60 px-3 py-1">
+                Focus on UX & performance
+              </span>
+              <span class="rounded-full border border-neutral-800 bg-neutral-900/60 px-3 py-1">
+                Frontend-oriented full-stack
+              </span>
+              <span class="rounded-full border border-neutral-800 bg-neutral-900/60 px-3 py-1">
+                Modern JS/TS ecosystems
+              </span>
+            </div>
+          </div>
+
+          <!-- Columna modelo 3D -->
+
+          <FbxViewer client:load />
+        </div>
       </section>
 
       <section id="experience" class="mx-auto max-w-6xl px-4 py-12">
@@ -274,7 +377,7 @@ const skills = [
           <article class="rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
             <header class="flex items-center justify-between">
               <h3 class="font-medium">
-                Axelia Cybersecurity · Full Stack Developer & Cybersecurity Intern
+                Axelia Cybersecurity · Full Stack Developer &amp; Cybersecurity Intern
               </h3>
               <span class="text-xs text-white">Jun 2025 — Aug 2025</span>
             </header>
@@ -308,9 +411,7 @@ const skills = [
               <li class="group rounded-2xl border border-neutral-200 p-5 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900">
                 <div class="flex items-center justify-between gap-2">
                   <h3 class="text-lg leading-tight font-medium">{p.title}</h3>
-                  <span aria-hidden class="transition-transform group-hover:translate-x-0.5">
-                    →
-                  </span>
+                  <span class="transition-transform group-hover:translate-x-0.5">→</span>
                 </div>
                 <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{p.desc}</p>
                 <div class="mt-3 flex flex-wrap gap-2 text-xs text-white">
@@ -333,12 +434,13 @@ const skills = [
         </ul>
       </section>
 
-      <section id="skills" class="mx-auto max-w-6xl px-4 py-12">
-        <h2 class="text-2xl font-semibold md:text-3xl">Skills</h2>
-        <ul class="mt-4 flex flex-wrap gap-2">
+      <section id="skills" class="mx-auto max-w-6xl px-4 py-16">
+        <h2 class="font-departure text-3xl md:text-4xl">Skills</h2>
+
+        <ul class="mt-8 flex flex-wrap gap-3">
           {
             skills.map((s) => (
-              <li class="rounded-full border border-neutral-300 px-3 py-1 text-sm dark:border-neutral-700">
+              <li class="rounded-lg border border-neutral-800/70 bg-neutral-900/40 px-4 py-2 text-sm text-neutral-300 transition hover:border-emerald-500/40 hover:text-white hover:shadow-[0_0_20px_rgba(16,185,129,0.08)]">
                 {s}
               </li>
             ))
@@ -346,38 +448,82 @@ const skills = [
         </ul>
       </section>
 
-      <section id="contact" class="mx-auto max-w-6xl px-4 py-12">
-        <h2 class="text-2xl font-semibold md:text-3xl">Contact</h2>
-        <p class="mt-3 max-w-2xl text-white dark:text-neutral-300">
-          Have a project focused on UX or performance? Let's discuss scope and timeline.
+      <section id="contact" class="mx-auto max-w-6xl px-4 py-20">
+        <h2 class="font-departure text-3xl md:text-4xl">Contact</h2>
+
+        <p class="mt-4 max-w-2xl text-neutral-400">
+          Ready to collaborate? Reach out through any of the following channels.
         </p>
-        <div class="mt-5 flex flex-wrap gap-3">
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
           <a
-            target="_blank"
             href="mailto:romanvalles01@gmail.com"
-            class="rounded-xl bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:opacity-90 dark:bg-white dark:text-neutral-900"
-            >Email</a
-          >
-          <a
             target="_blank"
+            class="group rounded-xl border border-neutral-800 bg-neutral-900/40 px-6 py-5 transition hover:border-neutral-600 hover:bg-neutral-900"
+          >
+            <p class="text-xs tracking-wider text-neutral-400 uppercase">Email</p>
+            <p class="mt-1 text-sm font-medium text-white group-hover:text-emerald-300">
+              romanvalles01@gmail.com
+            </p>
+          </a>
+
+          <a
             href="https://github.com/romanvalles01"
-            class="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
-            >GitHub</a
-          >
-          <a
             target="_blank"
-            href="https://www.linkedin.com/in/romanvalles"
-            class="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
-            >LinkedIn</a
+            class="group rounded-xl border border-neutral-800 bg-neutral-900/40 px-6 py-5 transition hover:border-neutral-600 hover:bg-neutral-900"
           >
+            <p class="text-xs tracking-wider text-neutral-400 uppercase">GitHub</p>
+            <p class="mt-1 text-sm font-medium text-white group-hover:text-emerald-300">
+              github.com/romanvalles01
+            </p>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/romanvalles"
+            target="_blank"
+            class="group rounded-xl border border-neutral-800 bg-neutral-900/40 px-6 py-5 transition hover:border-neutral-600 hover:bg-neutral-900"
+          >
+            <p class="text-xs tracking-wider text-neutral-400 uppercase">LinkedIn</p>
+            <p class="mt-1 text-sm font-medium text-white group-hover:text-emerald-300">
+              linkedin.com/in/romanvalles
+            </p>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="mx-auto max-w-6xl px-4 pt-6 pb-16 text-sm text-white">
-      <div class="flex items-center justify-between">
-        <p>© {new Date().getFullYear()} Román</p>
-        <a href="#home" class="underline underline-offset-4">Back to top</a>
+    <footer class="border-t border-neutral-800/80 bg-neutral-950/80 md:ml-60">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-3 px-4 pt-12 pb-12 text-xs text-neutral-400 sm:flex-row sm:items-center sm:justify-between"
+      >
+        {/* Izquierda: copyright + nombre */}
+        <div class="space-y-1">
+          <p class="font-medium text-neutral-200">
+            © {new Date().getFullYear()} Román Valles
+          </p>
+          <p class="text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
+            Full-Stack Developer · Portfolio
+          </p>
+        </div>
+
+        {/* Centro: stack / tech */}
+        <div class="text-[11px] text-neutral-500 sm:text-right">
+          <p>
+            Built with <span class="text-neutral-200">Astro</span>,{" "}
+            <span class="text-neutral-200">Tailwind</span> &amp;{" "}
+            <span class="text-neutral-200">React bits</span>.
+          </p>
+        </div>
+
+        {/* Derecha: acción */}
+        <div class="flex items-center justify-between gap-3 sm:flex-col sm:items-end">
+          <a
+            href="#home"
+            class="text-[11px] font-medium tracking-[0.18em] text-neutral-300 uppercase underline underline-offset-4 hover:text-white"
+          >
+            Back to top
+          </a>
+        </div>
       </div>
     </footer>
   </body>
